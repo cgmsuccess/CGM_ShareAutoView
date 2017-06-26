@@ -3,3 +3,4 @@
 
 效果图
 https://github.com/cgmsuccess/CGM_ShareAutoView/blob/master/test.gif
+<img src = "https://github.com/cgmsuccess/CGM_ShareAutoView/blob/master/test.gif">效果图</img>
