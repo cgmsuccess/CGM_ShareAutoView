@@ -45,6 +45,9 @@
 		1853B1671F00F9510061491D /* 图层-0qq@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1853B14D1F00F9510061491D /* 图层-0qq@2x.png */; };
 		1853B1681F00F9510061491D /* 图层-0qq@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1853B14E1F00F9510061491D /* 图层-0qq@3x.png */; };
 		1853B16B1F00FC460061491D /* CGM_AlertContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853B1691F00FC460061491D /* CGM_AlertContoller.m */; };
+		F70AE7A71FF239B600A1A6A2 /* XC_optionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AE7A21FF239B600A1A6A2 /* XC_optionViewCell.m */; };
+		F70AE7A81FF239B600A1A6A2 /* XC_OpptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AE7A31FF239B600A1A6A2 /* XC_OpptionView.m */; };
+		F70AE7A91FF239B600A1A6A2 /* XC_optionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70AE7A61FF239B600A1A6A2 /* XC_optionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +117,11 @@
 		1853B14E1F00F9510061491D /* 图层-0qq@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "图层-0qq@3x.png"; sourceTree = "<group>"; };
 		1853B1691F00FC460061491D /* CGM_AlertContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGM_AlertContoller.m; sourceTree = "<group>"; };
 		1853B16A1F00FC460061491D /* CGM_AlertContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGM_AlertContoller.h; sourceTree = "<group>"; };
+		F70AE7A21FF239B600A1A6A2 /* XC_optionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XC_optionViewCell.m; sourceTree = "<group>"; };
+		F70AE7A31FF239B600A1A6A2 /* XC_OpptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XC_OpptionView.m; sourceTree = "<group>"; };
+		F70AE7A41FF239B600A1A6A2 /* XC_optionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XC_optionViewCell.h; sourceTree = "<group>"; };
+		F70AE7A51FF239B600A1A6A2 /* XC_OpptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XC_OpptionView.h; sourceTree = "<group>"; };
+		F70AE7A61FF239B600A1A6A2 /* XC_optionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XC_optionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +154,7 @@
 			children = (
 				1853B1691F00FC460061491D /* CGM_AlertContoller.m */,
 				1853B16A1F00FC460061491D /* CGM_AlertContoller.h */,
+				F70AE7A11FF2395700A1A6A2 /* XC_OptonsView */,
 				1853B1341F00F9510061491D /* shareImage */,
 				1853B12B1F00F8730061491D /* Share_view */,
 				1853B0F71F00F6A50061491D /* CGM_ShareAutoView */,
@@ -250,6 +259,18 @@
 				1853B14E1F00F9510061491D /* 图层-0qq@3x.png */,
 			);
 			path = shareImage;
+			sourceTree = "<group>";
+		};
+		F70AE7A11FF2395700A1A6A2 /* XC_OptonsView */ = {
+			isa = PBXGroup;
+			children = (
+				F70AE7A51FF239B600A1A6A2 /* XC_OpptionView.h */,
+				F70AE7A31FF239B600A1A6A2 /* XC_OpptionView.m */,
+				F70AE7A41FF239B600A1A6A2 /* XC_optionViewCell.h */,
+				F70AE7A21FF239B600A1A6A2 /* XC_optionViewCell.m */,
+				F70AE7A61FF239B600A1A6A2 /* XC_optionViewCell.xib */,
+			);
+			path = XC_OptonsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,6 +406,7 @@
 				1853B1611F00F9510061491D /* ic_weixin22@2x.png in Resources */,
 				1853B1561F00F9510061491D /* ic_pyq@3x.png in Resources */,
 				1853B1511F00F9510061491D /* ic_kongjian@2x.png in Resources */,
+				F70AE7A91FF239B600A1A6A2 /* XC_optionViewCell.xib in Resources */,
 				1853B1671F00F9510061491D /* 图层-0qq@2x.png in Resources */,
 				1853B1541F00F9510061491D /* ic_pengyouquan@3x.png in Resources */,
 				1853B1641F00F9510061491D /* ic_wxchat@3x.png in Resources */,
@@ -414,11 +436,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1853B1001F00F6A50061491D /* ViewController.m in Sources */,
+				F70AE7A81FF239B600A1A6A2 /* XC_OpptionView.m in Sources */,
 				1853B0FD1F00F6A50061491D /* AppDelegate.m in Sources */,
 				1853B0FA1F00F6A50061491D /* main.m in Sources */,
 				1853B16B1F00FC460061491D /* CGM_AlertContoller.m in Sources */,
 				1853B1331F00F8730061491D /* CGM_shareView.m in Sources */,
 				1853B1311F00F8730061491D /* CGM_shareCell.m in Sources */,
+				F70AE7A71FF239B600A1A6A2 /* XC_optionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +676,7 @@
 				1853B1241F00F6A50061491D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1853B1251F00F6A50061491D /* Build configuration list for PBXNativeTarget "CGM_ShareAutoViewTests" */ = {
 			isa = XCConfigurationList;
@@ -660,6 +685,7 @@
 				1853B1271F00F6A50061491D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1853B1281F00F6A50061491D /* Build configuration list for PBXNativeTarget "CGM_ShareAutoViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -668,6 +694,7 @@
 				1853B12A1F00F6A50061491D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

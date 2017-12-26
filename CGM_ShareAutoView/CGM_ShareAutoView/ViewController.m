@@ -12,6 +12,10 @@
 
 #import "CGM_AlertContoller.h"
 
+#import "XC_OpptionView.h"
+
+#define KWidth [UIScreen mainScreen].bounds.size.width
+
 @interface ViewController ()
 
 @end
@@ -27,25 +31,27 @@
 - (IBAction)ActionBtn:(id)sender {
     
     
-        NSArray *iamgeArr = @[@"ic_qiuqiu.png",@"ic_zone.png",@"ic_wxchat.png",@"ic_pyq.png",@"ic_qiuqiu.png",@"ic_zone.png",@"ic_wxchat.png",@"ic_pyq.png"];
-        NSArray *titleArr = @[@"QQ",@"空间",@"微信",@"朋友圈",@"QQ",@"空间",@"微信",@"朋友圈"];
+        NSArray *iamgeArr = @[@"ic_qiuqiu.png",@"ic_zone.png",@"ic_wxchat.png",@"ic_pyq.png",@"ic_qiuqiu.png",@"ic_zone.png",@"ic_wxchat.png",@"ic_pyq.png",@"ic_qiuqiu.png",@"ic_zone.png",@"ic_wxchat.png",@"ic_pyq.png"];
+        NSArray *titleArr = @[@"QQ",@"空间",@"微信",@"朋友圈",@"QQ",@"空间",@"微信",@"朋友圈",@"QQ",@"空间",@"微信",@"朋友圈"];
         //分享页面
-        CGM_shareView *shareView = [[CGM_shareView alloc] initWithTitle:titleArr AndWithImage:iamgeArr AndOffset:NO];
-        shareView.selectBlock=^(NSString *platForm){
+        CGM_shareView *shareView = [[CGM_shareView alloc] initWithTitle:titleArr AndWithImage:iamgeArr Andcols:3 AndOffset:NO];
+    
+    shareView.selectBlock=^(NSString *platForm){
             //分享对应platframe
             NSLog(@"platForm = %@" ,platForm) ;
-            
             [CGM_AlertContoller  alertMesasgeTwoBtn:platForm AndUIAlertControllerStyle:UIAlertControllerStyleAlert confirmHandler:^(UIAlertAction *No_cancal) {
                 
             } AndconfirmActionString:platForm cancleHandler:^(UIAlertAction *cancal) {
                 
             } AndcancleString:@"取消"];
-            
         };
-    
-   
-    
         [self.view addSubview: shareView];
+    
+    XC_OpptionView *optionview = [[XC_OpptionView alloc] initWithOptionArr:iamgeArr AndOptonsTitle:titleArr AndOptionsRowsCount:4 AndOptionTopBottomDistance:0];
+    CGFloat height = [optionview viewHeight];
+    optionview.frame = CGRectMake(0, 300, KWidth, height);
+    optionview.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:optionview];
 }
 
 
