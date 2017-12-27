@@ -6,14 +6,12 @@
 ![(效果图)](http://upload-images.jianshu.io/upload_images/2018474-11c92543ba335f66.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 <h4>
-
     最近整合了一下项目，发现很多重复UI，于是简单的封装了下。便于日后整合
-    
 </h4>
 
 ## 主要思路就是对collectionview的简单封装抽取了一下
 ```
-NSInteger rows = (count - 1) / cols + 1; //计算有多少列
+NSInteger rows = (count - 1) / cols + 1; //计算有多少列 。核心思路就是这个
 如何根据列数算行数   。总的选项数减 1 。除以 列数 加 1 即等于 行数 。
 最主要是根据这个公式获得冬天的高度，进行计算 。
 
@@ -36,7 +34,7 @@ NSLog(@"platForm = %@" ,platForm) ;
 [self.view addSubview: shareView];
 ```
 
-##### 这里注意。因为是collectionview 继承 UIScrollview 在控制器 会 自动偏移64单位。
+## 这里注意。因为是collectionview 继承 UIScrollview 在控制器 会 自动偏移64单位。
 ```
 self.automaticallyAdjustsScrollViewInsets = NO
 //很重要，要不然高度计算不准确

@@ -59,7 +59,7 @@
 
 -(void)getSectionDataTwo
 {
-    secondArr = @[@"快速创建选项列表Demo1",@"普通简单的自定义Demo2",@"简单Demo3"];
+    secondArr = @[@"快速创建选项列表Demo1",@"应用场景Demo2",@"应用场景Demo3"];
 }
 
 #pragma mark UITableViewDelegate,UITableViewDataSource
