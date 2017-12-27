@@ -2,7 +2,7 @@
 //  XC_optionViewCell.h
 //  optionsDemo
 //
-//  Created by 陈桂民 on 2017/12/26.
+//  Created by cgm on 2017/12/26.
 //  Copyright © 2017年 cgm. All rights reserved.
 //
 

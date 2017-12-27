@@ -26,9 +26,9 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QQ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eY-A7-sKA">
-                        <rect key="frame" x="8" y="73.5" width="60" height="21"/>
+                        <rect key="frame" x="0.0" y="73.5" width="76" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="9dO-gd-GgI"/>
+                            <constraint firstAttribute="height" constant="21" id="c9a-91-Hfq"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
@@ -37,11 +37,11 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="9eY-A7-sKA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="QTC-4j-wXa"/>
+                <constraint firstItem="9eY-A7-sKA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IDH-Dw-Rf4"/>
                 <constraint firstItem="Siy-WP-ZQk" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-10" id="hZq-mz-9s3"/>
-                <constraint firstItem="9eY-A7-sKA" firstAttribute="top" secondItem="Siy-WP-ZQk" secondAttribute="bottom" id="i9g-rt-ynH"/>
+                <constraint firstItem="9eY-A7-sKA" firstAttribute="top" secondItem="Siy-WP-ZQk" secondAttribute="bottom" id="hjw-Iy-bZY"/>
+                <constraint firstAttribute="trailing" secondItem="9eY-A7-sKA" secondAttribute="trailing" id="hoU-14-7X7"/>
                 <constraint firstItem="Siy-WP-ZQk" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ipI-Nq-HEV"/>
-                <constraint firstAttribute="trailing" secondItem="9eY-A7-sKA" secondAttribute="trailing" constant="8" id="uzF-3v-PIB"/>
             </constraints>
             <size key="customSize" width="76" height="117"/>
             <connections>

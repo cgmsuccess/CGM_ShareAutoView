@@ -15,7 +15,7 @@
 #define itemWH (KWidth - (cols - 1) * margin) / cols
 
 NSInteger  cols = 5; //默认列数
-NSInteger  ItemHeight = 72 ;  //每个选项的高度 。可以修改他但是不建议低于 72 ，可以高于72
+CGFloat  ItemHeight = 72 ;  //每个选项的高度 。可以修改他但是不建议低于 72 ，可以高于72
 static CGFloat const margin = 1; //间隔
 static CGFloat cancleHeight = 44 ; //取消按钮高度
 static CGFloat animationTime = 0.25; //动画时间。从下面移动到上面
@@ -40,11 +40,13 @@ static CGFloat animationTime = 0.25; //动画时间。从下面移动到上面
 
 @implementation CGM_shareView
 
--(instancetype)initWithTitle:(NSArray *)titleAlrr AndWithImage:(NSArray *)imageArr Andcols:(NSInteger)setcols AndOffset:(BOOL)offset{
+-(instancetype)initWithTitle:(NSArray *)titleAlrr AndWithImage:(NSArray *)imageArr Andcols:(NSInteger)setcols AndOptionsHeight:(CGFloat)optionsHeight AndOffset:(BOOL)offset{
+    
     self = [super init];
     if (self) {
         _bgViewHeith = 160 ;//默认
         cols = setcols ;
+        ItemHeight = optionsHeight ;
         self.titlrArr = titleAlrr ;
         self.imageArr = imageArr ;
         self.isOffset = offset ;
