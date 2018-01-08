@@ -34,11 +34,24 @@
                             <constraint firstAttribute="height" constant="50" id="b5L-bQ-9V6"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmm-RJ-y2I">
+                        <rect key="frame" x="69" y="1" width="20" height="20"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="1GF-rF-lRe"/>
+                            <constraint firstAttribute="width" constant="20" id="V8s-sS-mHq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="vmm-RJ-y2I" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="7WR-cB-zf9"/>
                 <constraint firstAttribute="trailing" secondItem="RVX-Qx-ljc" secondAttribute="trailing" id="Eml-0V-ZcO"/>
                 <constraint firstItem="RVX-Qx-ljc" firstAttribute="top" secondItem="nWC-PT-Q9d" secondAttribute="bottom" id="Rlu-6U-owZ"/>
+                <constraint firstAttribute="trailing" secondItem="vmm-RJ-y2I" secondAttribute="trailing" constant="1" id="YHh-Ow-aWM"/>
                 <constraint firstItem="nWC-PT-Q9d" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-10" id="ZGo-i1-bUg"/>
                 <constraint firstItem="RVX-Qx-ljc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gav-Dm-sgS"/>
                 <constraint firstItem="nWC-PT-Q9d" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="pHB-aJ-3h8"/>
@@ -47,6 +60,9 @@
             <connections>
                 <outlet property="cellHeight" destination="b5L-bQ-9V6" id="TRZ-bL-rjy"/>
                 <outlet property="cellWidth" destination="6pT-c2-DJB" id="0nZ-av-omB"/>
+                <outlet property="markLabel" destination="vmm-RJ-y2I" id="YB1-77-v0W"/>
+                <outlet property="markLabelHeigt" destination="1GF-rF-lRe" id="4Kn-oO-rW8"/>
+                <outlet property="markLabelWidth" destination="V8s-sS-mHq" id="sr6-Z2-hEs"/>
                 <outlet property="optionImageView" destination="nWC-PT-Q9d" id="xya-yz-cfF"/>
                 <outlet property="optionsTitle" destination="RVX-Qx-ljc" id="uEG-dH-nQj"/>
             </connections>

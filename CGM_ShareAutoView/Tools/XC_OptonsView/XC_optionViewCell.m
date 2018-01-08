@@ -13,7 +13,11 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-
+    self.markLabel.layer.masksToBounds = YES;
+    self.markLabel.layer.cornerRadius = 10 ;
+    
 }
+
+
 
 @end

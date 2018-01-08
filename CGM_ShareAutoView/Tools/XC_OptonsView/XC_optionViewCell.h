@@ -10,6 +10,16 @@
 
 @interface XC_optionViewCell : UICollectionViewCell
 
+/**   提示点   */
+@property (weak, nonatomic) IBOutlet UILabel *markLabel;
+
+/**   提示点的高   */
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *markLabelHeigt;
+
+/**   提示点的宽   */
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *markLabelWidth;
+
+
 
 // MARK:- 选项的图片
 @property (weak, nonatomic) IBOutlet UIImageView *optionImageView;
