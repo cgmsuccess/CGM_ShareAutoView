@@ -28,9 +28,11 @@
 /**  每个item选项的颜色  ***/
 @property (nonatomic)UIColor *optionsBackColor;
 
-
 /**  点击每个选项的block回调 ***/
 @property (nonatomic,copy)void(^cilckOptionHandle)(NSString *title , NSInteger index);
+
+/**  每个选项事否有提示点  ***/
+@property (nonatomic,strong)NSMutableArray *optionMarkArr;
 
 
 /**
@@ -57,12 +59,13 @@
 -(instancetype)initWithXCOptionColumn:(NSInteger)Colnumer AndImageArr:(NSArray *)imageArr AndTitleArr:(NSArray *)titleArr;
 
 
-
 /**
  获得当前创建的视图的最适应高度。建议使用此属性设置frame 的高度 
  @return 高度
  */
 -(CGFloat)viewHeight;
+
+
 
 
 

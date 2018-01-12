@@ -8,6 +8,7 @@
 
 #import "XC_OptionView.h"
 #import "XC_optionViewCell.h"
+#import "XC_optionsModel.h"
 
 #define KWidth [UIScreen mainScreen].bounds.size.width
 
@@ -21,10 +22,10 @@ NSString * const xcoptionCell = @"xcoptionCell";
 
 @interface XC_OptionView()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-// MARK:- 每个选项的图片
-@property (nonatomic,strong)NSArray *optionsImageArr ;
-// MARK:- 每个选项的title
-@property (nonatomic,strong)NSArray *optionsTitleArr ;
+
+// MARK:- 每个选项模型数组
+@property (nonatomic,strong)NSMutableArray *optionsArr ;
+
 // MARK:- collection
 @property (nonatomic,strong)UICollectionView *optonsCollections ;
 // MARK:- 上下间距
@@ -35,12 +36,22 @@ NSString * const xcoptionCell = @"xcoptionCell";
 @implementation XC_OptionView
 
 #pragma mark Lazy
+
+-(NSMutableArray *)optionsArr
+{
+    if (!_optionsArr) {
+        _optionsArr = [NSMutableArray array];
+    }
+    return _optionsArr;
+}
+
+
 -(UICollectionView *)optonsCollections
 {
     if (!_optonsCollections) {
         //此处必须要有创见一个UICollectionViewFlowLayout的对象
         UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc]init];
-        layout.itemSize = CGSizeMake(KWidth/_optionsImageArr.count, KWidth/_optionsImageArr.count);
+        layout.itemSize = CGSizeMake(KWidth/_optionsArr.count, KWidth/self.optionsArr.count);
         layout.minimumInteritemSpacing = margin;
         layout.minimumLineSpacing = margin;
         
@@ -70,8 +81,14 @@ NSString * const xcoptionCell = @"xcoptionCell";
              AndOptionsRowsCount:(NSInteger)count AndOptionTopBottomDistance:(CGFloat)distance AndOptionsHeight:(CGFloat)optionsHeight
 {
     if (self = [super init]) {
-        self.optionsImageArr = OptionsArrImage;
-        self.optionsTitleArr = titileArr ;
+        for (int i = 0 ; i < titileArr.count; i++) {
+            XC_optionsModel *model = [[XC_optionsModel alloc] init];
+            model.optionsImage = OptionsArrImage[i];
+            model.optionTitle = titileArr[i];
+            model.markTitle = @"0";
+            [self.optionsArr addObject:model];
+        }
+        
         optionscols = count; //列数
         OptionsHeight =  optionsHeight ; //每个选项的高度
         self.topBottomDistance = distance ; //上下距离
@@ -83,8 +100,14 @@ NSString * const xcoptionCell = @"xcoptionCell";
 -(instancetype)initWithXCOptionColumn:(NSInteger)Colnumer AndImageArr:(NSArray *)imageArr AndTitleArr:(NSArray *)titleArr{
     
     if (self = [super init]) {
-        self.optionsImageArr = imageArr;
-        self.optionsTitleArr = titleArr ;
+        for (int i = 0 ; i < imageArr.count; i++) {
+            XC_optionsModel *model = [[XC_optionsModel alloc] init];
+            model.optionsImage = imageArr[i];
+            model.optionTitle = titleArr[i];
+            model.markTitle = @"0";
+            [self.optionsArr addObject:model];
+        }
+        
         optionscols = Colnumer; //列数
         OptionsHeight =  72 ; //每个选项的高度
         self.topBottomDistance = 10 ; //上下距离
@@ -113,7 +136,7 @@ NSString * const xcoptionCell = @"xcoptionCell";
 
 -(CGRect)getCollectionRect
 {
-    NSInteger count = _optionsImageArr.count;
+    NSInteger count = self.optionsArr.count;
     NSInteger rows = (count - 1) / optionscols + 1; //多少行
     
     CGRect rect =  _optonsCollections.frame;
@@ -122,6 +145,17 @@ NSString * const xcoptionCell = @"xcoptionCell";
     return rect ;
 }
 
+-(void)setOptionMarkArr:(NSMutableArray *)optionMarkArr
+{
+    _optionMarkArr = optionMarkArr ;
+    int i = 0 ;
+    for (NSString *markString in optionMarkArr) {
+        XC_optionsModel *model = self.optionsArr[i];
+        model.markTitle = markString ;
+        i ++ ;
+    }
+    [self.optonsCollections reloadData];
+}
 
 -(void)setItemCellWidthAndHeight:(CGFloat)itemCellWidthAndHeight
 {
@@ -150,15 +184,13 @@ NSString * const xcoptionCell = @"xcoptionCell";
 }
 //每一组有多少个cell
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.optionsImageArr.count;
+    return self.optionsArr.count;
 }
 //每一个cell是什么
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     XC_optionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:xcoptionCell forIndexPath:indexPath];
-    NSString *iamgeStr = _optionsImageArr[indexPath.row];
-    NSString *titltrStr= _optionsTitleArr[indexPath.row];
-    cell.optionImageView.image = [UIImage imageNamed:iamgeStr];
-    cell.optionsTitle.text = titltrStr ;
+    XC_optionsModel *optionModel = self.optionsArr[indexPath.row];
+    cell.model = optionModel ;
     
     //设置属性
     if (_itemCellWidthAndHeight != 0) {
@@ -177,6 +209,9 @@ NSString * const xcoptionCell = @"xcoptionCell";
     if (_optionsBackColor) {
         cell.backgroundColor = _optionsBackColor;
     }
+    
+  
+    
     return cell;
 }
 
@@ -196,10 +231,10 @@ NSString * const xcoptionCell = @"xcoptionCell";
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    NSString *title = _optionsTitleArr[indexPath.row];
+    XC_optionsModel *model = self.optionsArr[indexPath.row];
     
 
-    self.cilckOptionHandle(title, indexPath.row);
+    self.cilckOptionHandle(model.markTitle, indexPath.row);
 }
 
 

@@ -10,9 +10,14 @@
 #import "XC_OptionView.h"
 
 @interface Demo3ViewController ()
-{
-    XC_OptionView *optionview ;
-}
+
+//注释:-
+@property (nonatomic,strong)XC_OptionView *optionview ;
+
+//注释:-
+@property (nonatomic,strong)NSMutableArray *markArr ; ;
+
+
 @end
 
 @implementation Demo3ViewController
@@ -49,29 +54,39 @@
     NSArray  * iamgeArr = @[@"bags.png",@"folder.png",@"QRCode.png",@"service.png",@"set.png"];
     NSArray  * titleArr = @[@"购物",@"文件",@"二维码",@"客服",@"设置"];
     
-    optionview = [[XC_OptionView alloc] initWithOptionArr:iamgeArr AndOptonsTitle:titleArr AndOptionsRowsCount:5 AndOptionTopBottomDistance:10 AndOptionsHeight:72];
+    _optionview = [[XC_OptionView alloc] initWithOptionArr:iamgeArr AndOptonsTitle:titleArr AndOptionsRowsCount:5 AndOptionTopBottomDistance:10 AndOptionsHeight:72];
     
     
     
     //这里设置一样的颜色就可以不显示缝隙了。
-    optionview.optionsBackColor = [UIColor whiteColor] ;
-    optionview.backgroundColor = Color(232, 241, 241, 1);
-    CGFloat height = [optionview viewHeight];
+    _optionview.optionsBackColor = [UIColor whiteColor] ;
+    _optionview.backgroundColor = Color(232, 241, 241, 1);
+    CGFloat height = [_optionview viewHeight];
 
-    optionview.frame = CGRectMake(0, 64, KWidth, height);
+    _optionview.frame = CGRectMake(0, 64, KWidth, height);
     
-    optionview.optionsTitleColor = [UIColor grayColor];
-    optionview.itemCellWidthAndHeight = 20;
+    _optionview.optionsTitleColor = [UIColor grayColor];
+    _optionview.itemCellWidthAndHeight = 20;
     
-    [self.view addSubview:optionview];
+    //默认 1 2 选项的 提示 是 1 ，3
+    self.markArr = [NSMutableArray arrayWithArray: @[@"0",@"1",@"3",@"0",@"0"]] ;
+   
+    _optionview.optionMarkArr = [NSMutableArray arrayWithArray:self.markArr];
+    [self.view addSubview:_optionview];
     
     
-    
-    
-    optionview.cilckOptionHandle = ^(NSString *title, NSInteger index) {
+    WS(weakSelf);
+    _optionview.cilckOptionHandle = ^(NSString *title, NSInteger index) {
+        
+        //点击选项，提示框消失
+        [weakSelf.markArr replaceObjectAtIndex:index withObject:@"0"];
+        
+        NSLog(@"weakSelf.markArr = %@" ,weakSelf.markArr ) ;
+        
+         weakSelf.optionview.optionMarkArr = weakSelf.markArr  ;
+        
         
         NSString *s = [NSString stringWithFormat:@"点击了%@  角标 %ld",title,index];
-        NSLog(@"s = %@" ,s);
         
         [CGM_AlertContoller alertMesasge:s confirmHandler:^(UIAlertAction *No_cancal) {
             

@@ -29,6 +29,7 @@
 		F70AE7E81FF380E200A1A6A2 /* Demo2CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AE7E71FF380E200A1A6A2 /* Demo2CustomView.m */; };
 		F70AE7EA1FF380EC00A1A6A2 /* Demo2CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70AE7E91FF380EC00A1A6A2 /* Demo2CustomView.xib */; };
 		F70AE7ED1FF38B4500A1A6A2 /* Demo3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70AE7EC1FF38B4500A1A6A2 /* Demo3ViewController.m */; };
+		F7A5387C2008EEB100488DA3 /* XC_optionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A5387B2008EEB100488DA3 /* XC_optionsModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		F70AE7E91FF380EC00A1A6A2 /* Demo2CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Demo2CustomView.xib; sourceTree = "<group>"; };
 		F70AE7EB1FF38B4500A1A6A2 /* Demo3ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo3ViewController.h; sourceTree = "<group>"; };
 		F70AE7EC1FF38B4500A1A6A2 /* Demo3ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Demo3ViewController.m; sourceTree = "<group>"; };
+		F7A5387A2008EEB100488DA3 /* XC_optionsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XC_optionsModel.h; sourceTree = "<group>"; };
+		F7A5387B2008EEB100488DA3 /* XC_optionsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XC_optionsModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +243,8 @@
 				F70AE7CF1FF334BA00A1A6A2 /* XC_optionViewCell.h */,
 				F70AE7CC1FF334BA00A1A6A2 /* XC_optionViewCell.m */,
 				F70AE7CD1FF334BA00A1A6A2 /* XC_optionViewCell.xib */,
+				F7A5387A2008EEB100488DA3 /* XC_optionsModel.h */,
+				F7A5387B2008EEB100488DA3 /* XC_optionsModel.m */,
 			);
 			path = XC_OptonsView;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				F70AE7BA1FF330A800A1A6A2 /* main.m in Sources */,
 				F70AE7D91FF334BA00A1A6A2 /* XC_OptionView.m in Sources */,
 				F70AE7B71FF330A800A1A6A2 /* ViewController.m in Sources */,
+				F7A5387C2008EEB100488DA3 /* XC_optionsModel.m in Sources */,
 				F70AE7ED1FF38B4500A1A6A2 /* Demo3ViewController.m in Sources */,
 				F70AE7E51FF37A4700A1A6A2 /* Demo2ViewController.m in Sources */,
 				F70AE7DF1FF3447D00A1A6A2 /* Demo1ViewController.m in Sources */,

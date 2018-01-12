@@ -7,11 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "XC_optionsModel.h"
 @interface XC_optionViewCell : UICollectionViewCell
+
+//注释:- XC_optionsModel 模型
+@property (nonatomic,strong) XC_optionsModel *model ;
 
 /**   提示点   */
 @property (weak, nonatomic) IBOutlet UILabel *markLabel;
+// MARK:- 选项的图片
+@property (weak, nonatomic) IBOutlet UIImageView *optionImageView;
+// MARK:- 选项的标题
+@property (weak, nonatomic) IBOutlet UILabel *optionsTitle;
+
+
 
 /**   提示点的高   */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *markLabelHeigt;
@@ -21,16 +30,12 @@
 
 
 
-// MARK:- 选项的图片
-@property (weak, nonatomic) IBOutlet UIImageView *optionImageView;
-// MARK:- 选项的标题
-@property (weak, nonatomic) IBOutlet UILabel *optionsTitle;
-
-
 // MARK:- 宽度
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cellWidth;
 // MARK:- 高度
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cellHeight;
+
+
 
 
 @end

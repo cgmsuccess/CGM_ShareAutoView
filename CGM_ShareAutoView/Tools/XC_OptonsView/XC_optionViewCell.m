@@ -8,6 +8,11 @@
 
 #import "XC_optionViewCell.h"
 
+@interface XC_optionViewCell()
+
+
+@end
+
 @implementation XC_optionViewCell
 
 - (void)awakeFromNib {
@@ -18,6 +23,18 @@
     
 }
 
+-(void)setModel:(XC_optionsModel *)model
+{
+    _model = model ;
+    self.optionImageView.image = [UIImage imageNamed:_model.optionsImage];
+    self.optionsTitle.text = _model.optionTitle ;
+    self.markLabel.text = _model.markTitle ;
+    if ([_model.markTitle isEqualToString:@"0"]) {
+        self.markLabel.hidden = YES ;
+    }else{
+        self.markLabel.hidden = NO ;
+    }
+}
 
 
 @end
